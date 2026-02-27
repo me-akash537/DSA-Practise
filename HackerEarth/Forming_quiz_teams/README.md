@@ -21,6 +21,7 @@ for (auto &e : edges) {
         picked_vec[j] = true;
     }
 }
+```
 
 ## Example Where Greedy Fails
 
