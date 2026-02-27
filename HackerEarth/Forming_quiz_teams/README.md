@@ -22,14 +22,9 @@ for (auto &e : edges) {
     }
 }
 
-This Greedy approach does not give optimal solutoins. Example Test case:
+## Example Where Greedy Fails
 
-4
-sohel -5 1
-mahmud -5 -1
-sanny 5 1
-prince 5 -1
-per -1 0
-mf 1 0
-kugel -25 0
-joey 25 0
+The greedy approach does not always produce the optimal solution. For example, consider these points: { (-5,1), (-5,-1), (5,1), (5,-1), (-1,0), (1,0), (-25,0), (25,0) }
+
+Expected output:
+Greedy ouptut: 56
