@@ -1,9 +1,0 @@
-4
-sohel -5 1
-mahmud -5 -1
-sanny 5 1
-prince 5 -1
-per -1 0
-mf 1 0
-kugel -25 0
-joey 25 0
