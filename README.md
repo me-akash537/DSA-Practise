@@ -1,4 +1,4 @@
-Inside each folder, you will find problems from different websites. It is not that I jump between platforms; I simply prefer to keep everything organized so that I can easily find problems later when needed.
+Inside each folder, you will find problems from different websites. It's not that I jump between platforms; I simply prefer to keep everything organized so that I can easily find problems later when needed.
 
 As I am starting out, I learn topics one by one and solve problems on LeetCode. Apart from learning the basics of a new topic, I use Codeforces for additional practice and contests.
 

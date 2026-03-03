@@ -68,12 +68,12 @@ int setKthBit(int n, int k) {
     return n | (1 << k);
 }
 
-bool isPowerOfTwo(int n) {
-    return n > 0 && ( (n & (n - 1)) == 0 );
-}
-
 int toggleIthBit(int n, int i) {
     return n ^ (1 << i);
+}
+
+bool isPowerOfTwo(int n) {
+    return n > 0 && ( (n & (n - 1)) == 0 );
 }
 
 int clearLastSetBit(int n) {
@@ -85,6 +85,18 @@ int countSetBits(int n) {
     while (n != 0) {
         n = n & (n-1);
         count++;
+    }
+    return count;
+}
+
+int minBitFlips(int start, int goal) {
+    int count = 0;
+    while ( (start != 0) || (goal != 0) ) {
+        if ((start & 1) != (goal & 1)) {
+            count++;
+        }
+        start >>= 1;
+        goal >>= 1;
     }
     return count;
 }
@@ -160,6 +172,12 @@ int main () {
     // count set bits in a number
     num = 115; // 1110011
     cout << "Number of set bits in " << num << " is " << countSetBits(num) << endl;
+
+    // count minimum bit flips to convert start to goal
+    int start = 10; // 1010
+    int goal = 7;  // 0111
+    cout << "Minimum bit flips to convert " << start << " to " << goal << " is " << minBitFlips(start, goal) << endl;
+
 
     return 0;
 }
