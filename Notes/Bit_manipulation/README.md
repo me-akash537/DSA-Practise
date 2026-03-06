@@ -12,3 +12,4 @@ Topics learnt:
 9. Clear last set bit.
 10. Count set bits.
 11. Minimum bit flips from start to goal (LeetCode 2220).
+12. Find the single number in an array where every element appears twice except one (LeetCode 136).

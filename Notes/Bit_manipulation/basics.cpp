@@ -54,6 +54,12 @@ void swap_using_temp(int &a, int &b) {
     b = temp;
 }
 
+void swap_using_addition(int &a, int &b) {
+    b = a  - b;
+    a = a - b;
+    b = a + b;
+}
+
 void swap_using_xor(int &a, int &b) {
     a = a ^ b;
     b = a ^ b; // or say b = (a ^ b) ^ b = a
@@ -61,7 +67,8 @@ void swap_using_xor(int &a, int &b) {
 }
 
 bool isIthBitSet(int n, int i) {
-    return (n & (1 << i)) != 0;
+    // return (n & (1 << i)) != 0;
+    return (n >> i) & 1;
 }
 
 int setKthBit(int n, int k) {
@@ -90,15 +97,17 @@ int countSetBits(int n) {
 }
 
 int minBitFlips(int start, int goal) {
-    int count = 0;
-    while ( (start != 0) || (goal != 0) ) {
-        if ((start & 1) != (goal & 1)) {
-            count++;
-        }
-        start >>= 1;
-        goal >>= 1;
-    }
+    int n = start ^ goal;
+    int count = countSetBits(n);
     return count;
+}
+
+int singleNumber(vector<int>& nums) {
+    int result = 0;
+    for (auto it : nums) {
+        result = result ^ it;
+    }
+    return result;
 }
 
 int main () {
@@ -132,8 +141,13 @@ int main () {
     swap_using_xor(x, y);
     cout << "x = " << x << ", y = " << y << endl;
 
+    // third method: using addition and subtraction
+    x = 11, y = 13;
+    swap_using_addition(x, y);
+    cout << "x = " << x << ", y = " << y << endl;
+
     // now let's check if ith bit is set or not
-    int num = 11; // 1011
+    int num = 13; // 1101
     int i = 2;
     if (isIthBitSet(num, i)) {
         cout << "Bit is set" << endl;
@@ -178,6 +192,10 @@ int main () {
     int goal = 7;  // 0111
     cout << "Minimum bit flips to convert " << start << " to " << goal << " is " << minBitFlips(start, goal) << endl;
 
+
+    // find the single number in an array where every element appears twice except one
+    vector<int> nums = {2, 3, 5, 4, 5, 3, 4};
+    cout << "The single number in the array is " << singleNumber(nums) << endl;
 
     return 0;
 }
