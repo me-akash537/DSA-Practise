@@ -1,10 +1,10 @@
 /*
-    Problem: 860. Lemonade Change
+    Problem: LC860. Lemonade Change
     Difficulty: Easy
 
     Tags: Greedy
     Takeaways: nothing much really, quite a basic problem.
-    
+
     yeah, note that while updating, you should prefer 10 over 5, because 10 can only be used for 20, while 5 can be used for both 10 and 20, so you should save the 5s as much as possible.
 
 */

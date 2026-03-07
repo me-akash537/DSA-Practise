@@ -79,13 +79,14 @@ int toggleIthBit(int n, int i) {
     return n ^ (1 << i);
 }
 
+int clearLastSetBit(int n) {
+    return n & (n - 1);
+}
+
 bool isPowerOfTwo(int n) {
     return n > 0 && ( (n & (n - 1)) == 0 );
 }
 
-int clearLastSetBit(int n) {
-    return n & (n - 1);
-}
 
 int countSetBits(int n) {
     int count = 0;
@@ -160,6 +161,15 @@ int main () {
     num = 10; // 1010
     cout << setKthBit(num, i) << endl; // 1110 -> 14
 
+    // toggle the i-th bit
+    num = 10; // 1010
+    i = 1;
+    cout << "Toggling bit " << i << " in " << num << " gives " << toggleIthBit(num, i) << endl;
+
+    // clearing last set bit
+    num = 10; // 1010
+    cout << "Clearing last set bit in " << num << " gives " << clearLastSetBit(num) << endl;
+
     // lets check if a number is power of two
     num = 16;
     if (isPowerOfTwo(num)) {
@@ -173,15 +183,6 @@ int main () {
     } else {
         cout << num << " is not a power of two" << endl;
     }
-    
-    // toggle the i-th bit
-    num = 10; // 1010
-    i = 1;
-    cout << "Toggling bit " << i << " in " << num << " gives " << toggleIthBit(num, i) << endl;
-
-    // clearing last set bit
-    num = 10; // 1010
-    cout << "Clearing last set bit in " << num << " gives " << clearLastSetBit(num) << endl;
 
     // count set bits in a number
     num = 115; // 1110011
