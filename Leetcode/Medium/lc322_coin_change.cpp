@@ -1,18 +1,21 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 /*
+    LC322 Coin Change
+    Difficulty: Medium
+    
     Tags: Greedy
     Tags: Dynamic Programming
     Tags: Graph
     Tags: Breadh First Search
     Tags: Dijkstra's Algorithm
 
-    Difficulty: Medium
     
     The notes for this problem is present in page number 7.
     The take is that you can see this problem as a graph problem where each node is an amount and the edges are the coins. So, we can use a Dijsktra's algorithm to find the shortest path from the source node (0) to the destination node (amount). 
 */
+
+
+#include <bits/stdc++.h>
+using namespace std;
 
 #define max_amount 10001
 #define max_coins 12
