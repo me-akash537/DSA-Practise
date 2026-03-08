@@ -1,3 +1,16 @@
+/*
+    LC455: Assign Cookies
+    Dificuluty: Easy
+
+    Tags: Greedy
+    Tags: Sorting
+
+    Takeaways: quite a basic problem, just sort the arrays and then use two pointers to find the optimal solution.
+
+    One thing to note is that, you shoul always give a child the smallest cookie that can satisfy him, because if you give him a bigger cookie, then you might not have a smaller cookie to satisfy another child, which might lead to a suboptimal solution. 
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
