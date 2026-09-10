@@ -7,6 +7,8 @@ int fibo_recursive(int n) {
     if (n == 1) return 1;
     return fibo_recursive(n - 1) + fibo_recursive(n - 2);
 }
+// Time complexity - O(2^n)
+// Space Complexity - O(n)
 
 int fibo_memo(int n, vector<int>& memo) {
     if (n < 0) return -1;
@@ -15,11 +17,13 @@ int fibo_memo(int n, vector<int>& memo) {
     memo[n] = fibo_memo(n - 1, memo) + fibo_memo(n - 2, memo);
     return memo[n];
 }
+// Time complexity - O(n)
+// Space Complexity - O(n)
 
 int fibo_dp(int n) {
     if (n < 0) return -1;
     if (n == 0) return 0;
-    
+
     vector<int> fibo_numbers(n + 1);
     fibo_numbers[0] = 0;
     fibo_numbers[1] = 1;
@@ -28,7 +32,8 @@ int fibo_dp(int n) {
     }
     return fibo_numbers[n];
 }
-
+// Time complexity - O(n)
+// Space Complexity - O(n)
 
 int main() {
     ios::sync_with_stdio(false);
