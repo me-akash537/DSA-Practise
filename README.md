@@ -5,3 +5,9 @@ As I am starting out, I learn topics one by one and solve problems on LeetCode. 
 If a problem goes into my notes, I name the file in the format `pno_filename.cpp`. For example: `027_bitmanipulation.cpp`.
 
 Also, I use AI at several places to clean up, or somtimes to fasten up basic stuff. But trust me, I am actually writing all of this code myself. 
+
+Use the following command to clear up all the .exe and .out files.
+
+```bash
+find . -type f \( -name "*.out" -o -name "*.exe" \) -delete
+```

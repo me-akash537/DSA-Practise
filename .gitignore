@@ -1,5 +1,16 @@
-*.exe
-*.out
-*.o
-*.txt
-.vscode/
+# Ignore everything by default (catches extensionless Linux binaries, .out, .exe, .o, temporary files, etc.)
+*
+
+# Whitelist directories so Git can traverse subfolders
+!*/
+
+# Whitelist only source files, documentation, and Git configuration
+!*.cpp
+!*.c
+!*.h
+!*.hpp
+!*.md
+!*.markdown
+!.gitignore
+
+
