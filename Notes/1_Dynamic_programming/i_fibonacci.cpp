@@ -10,17 +10,26 @@ int fibo_recursive(int n) {
 // Time complexity - O(2^n)
 // Space Complexity - O(n)
 
-int fibo_memo(int n, vector<int>& memo) {
+int fibo_memo(int n, vector<int>* memo = nullptr) {
     if (n < 0) return -1;
-    if (memo[n] != -1) return memo[n];
+    if (n == 0) return 0;
+    if (n == 1) return 1;
 
-    memo[n] = fibo_memo(n - 1, memo) + fibo_memo(n - 2, memo);
-    return memo[n];
+    vector<int> internal_memo;
+    if (memo == nullptr) {
+        internal_memo.assign(n + 1, -1);
+        memo = &internal_memo;
+    }
+
+    if ((*memo)[n] != -1) return (*memo)[n];
+
+    (*memo)[n] = fibo_memo(n - 1, memo) + fibo_memo(n - 2, memo);
+    return (*memo)[n];
 }
 // Time complexity - O(n)
 // Space Complexity - O(n)
 
-int fibo_dp(int n) {
+int fibo_save_in_array(int n) {
     if (n < 0) return -1;
     if (n == 0) return 0;
 
@@ -44,21 +53,9 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-
-        if (n < 0) {
-            cout << "-1\t-1\t-1\n";
-            continue;
-        }
-
-        vector<int> memo(n + 1, -1);
-
-        memo[0] = 0;
-        if (n >= 1)
-            memo[1] = 1;
-
         cout << fibo_recursive(n) << '\t'
-             << fibo_memo(n, memo) << '\t'
-             << fibo_dp(n) << '\n';
+             << fibo_memo(n) << '\t'
+             << fibo_save_in_array(n) << '\n';
     }
     return 0;
 }
