@@ -1,3 +1,7 @@
+# Memoization idea
+
+Visualize as a tree, getting a working solution using recursion, add a memo object.
+
 # Execution tree: `fibo_recursive(6)`
 
 ```mermaid
