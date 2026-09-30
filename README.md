@@ -11,3 +11,11 @@ Use the following command to clear up all the .exe and .out files.
 ```bash
 find . -type f \( -name "*.out" -o -name "*.exe" \) -delete
 ```
+
+To sync/link a problem file to notes (so changes in one reflect in the other):
+
+```bash
+ln -sr <source_file> <target_link>
+# Example:
+# ln -sr Leetcode/Medium/lc322_coin_change.cpp Notes/1_Dynamic_programming/iii_canSum.cpp
+```
